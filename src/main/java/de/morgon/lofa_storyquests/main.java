@@ -1,13 +1,21 @@
 package de.morgon.lofa_storyquests;
 
+import de.morgon.lofa_storyquests.commands.StartingFirstQuestCommand;
+import de.morgon.lofa_storyquests.quests.ADiffrentSide;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        System.out.println("Starting up plugin");
 
+        getCommand("sart1quest").setExecutor(new StartingFirstQuestCommand());
+
+        PluginManager pluginManager= Bukkit.getPluginManager();
+        pluginManager.registerEvents(new ADiffrentSide(), this);
     }
 
     @Override
