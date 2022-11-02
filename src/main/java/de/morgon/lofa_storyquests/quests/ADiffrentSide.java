@@ -4,16 +4,11 @@ package de.morgon.lofa_storyquests.quests;
 This quest immediately starts when the player joins the game
 */
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
-import org.bukkit.scoreboard.Scoreboard;
-
-import java.util.EventListener;
 
 public class ADiffrentSide implements Listener {
 

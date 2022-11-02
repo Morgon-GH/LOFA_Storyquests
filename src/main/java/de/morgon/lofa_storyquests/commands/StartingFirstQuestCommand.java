@@ -10,8 +10,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 public class StartingFirstQuestCommand implements CommandExecutor {
     @Override
@@ -34,6 +32,9 @@ public class StartingFirstQuestCommand implements CommandExecutor {
             p.playSound(p.getPlayer(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
 
             BossBar bar = Bukkit.createBossBar("§4Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
+            bar.setVisible(true);
+            bar.addPlayer(p);
+
 
         }else System.out.println("Command must be executed by a player");
 
