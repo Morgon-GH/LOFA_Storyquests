@@ -6,3 +6,7 @@ prefix: [ LOFA Storyquests ]
 authors: [ Morgon, CrAzyA22 ]
 description: This Plugin is for the Storyquests of the "Legends of Arrol"-Server
 website: https://sites.google.com/view/legends-of-arrol/startseite
+commands:
+  start1quest:
+    description: Starts the first storyquest and so the game
+    usage: type "/start1quest" as the player starting the quest/game

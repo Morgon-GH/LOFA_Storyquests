@@ -12,7 +12,7 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         System.out.println("Starting up plugin");
 
-        getCommand("sart1quest").setExecutor(new StartingFirstQuestCommand());
+        getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
         pluginManager.registerEvents(new ADiffrentSide(), this);
