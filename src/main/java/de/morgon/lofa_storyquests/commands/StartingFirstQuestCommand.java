@@ -25,7 +25,7 @@ public class StartingFirstQuestCommand implements CommandExecutor {
             p.teleport(new Location(p.getWorld(), x, y, z));
 
             p.sendMessage("§cWillkommen bei den Legenden von Arrol");
-            p.sendMessage("§c-------------------------------------------------------------------------------------------");
+            p.sendMessage("§c--------------------------------------------------------------------------");
             p.sendMessage("§2Du beginnst deine Geschichte als Einfacher Bauer auf einem Hof. Du hast nichts, außer dein Feld und deine zwei Pferde vor deiner Kutsche.");
             p.sendMessage("§2Wie jeden Tag beginnst du auch heute damit, das Feld zu ernten und den Ertrag an die Hafenstadt zu bringen. Doch der Tag wird anders verlaufen, als du es erwartet hast...");
 
