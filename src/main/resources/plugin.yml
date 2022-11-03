@@ -1,4 +1,4 @@
-name: Lofa Storyquests
+name: Lofa-Storyquests
 version: '${project.version}'
 main: de.morgon.lofa_storyquests.main
 api-version: 1.19
