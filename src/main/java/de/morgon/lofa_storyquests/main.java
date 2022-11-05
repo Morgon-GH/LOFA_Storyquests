@@ -10,6 +10,14 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
+        PlayerProgressConfig.setup();
+        PlayerProgressConfig.get().options().copyDefaults(true);
+        PlayerProgressConfig.save();
+
         System.out.println("Starting up plugin");
 
         getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
