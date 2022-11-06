@@ -2,6 +2,7 @@ package de.morgon.lofa_storyquests.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
@@ -10,6 +11,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.Score;
+import org.bukkit.scoreboard.Scoreboard;
 
 public class StartingFirstQuestCommand implements CommandExecutor {
     @Override
@@ -34,6 +37,8 @@ public class StartingFirstQuestCommand implements CommandExecutor {
             BossBar bar = Bukkit.createBossBar("§2Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
             bar.setVisible(true);
             bar.addPlayer(p);
+
+
 
 
         }else System.out.println("Command must be executed by a player");
