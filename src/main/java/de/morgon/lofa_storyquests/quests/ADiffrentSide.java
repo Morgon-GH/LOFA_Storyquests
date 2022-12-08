@@ -13,7 +13,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 public class ADiffrentSide implements Listener {
 
     @EventHandler
-    public void OnSpawn(BlockBreakEvent e){
+    public void onSpawn(BlockBreakEvent e){
         Player p = e.getPlayer();
         if(p.getScoreboard().getScores("storyquest").equals(1)){
         if(e.getBlock().equals(Material.WHEAT)){
