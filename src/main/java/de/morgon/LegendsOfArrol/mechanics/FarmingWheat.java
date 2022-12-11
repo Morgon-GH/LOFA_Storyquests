@@ -3,7 +3,7 @@ package de.morgon.LegendsOfArrol.mechanics;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Ageable;
+import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,7 +37,7 @@ public class FarmingWheat implements Listener {
     }
 
     public boolean isFullyGrown(Block block){
-        Ageable ageable = (Ageable) block.getBlockData();
+        Ageable ageable = (org.bukkit.block.data.Ageable) block.getBlockData();
 
         return ageable.getAge() == 7;
     }
