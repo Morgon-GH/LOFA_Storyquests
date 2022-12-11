@@ -1,6 +1,6 @@
 name: LegendsOfArrol
 version: '${project.version}'
-main: de.morgon.lofa_storyquests.main
+main: de.morgon.LegendsOfArrol.main
 api-version: 1.19
 prefix: [ Legends of Arrol ]
 authors: [ Morgon, CrAzyA22 ]
