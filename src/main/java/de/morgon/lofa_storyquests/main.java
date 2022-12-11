@@ -1,6 +1,7 @@
 package de.morgon.lofa_storyquests;
 
 import de.morgon.lofa_storyquests.commands.StartingFirstQuestCommand;
+import de.morgon.lofa_storyquests.configs.PlayerProgressConfig;
 import de.morgon.lofa_storyquests.quests.ADiffrentSide;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -17,6 +18,8 @@ public final class main extends JavaPlugin {
         PlayerProgressConfig.setup();
         PlayerProgressConfig.get().options().copyDefaults(true);
         PlayerProgressConfig.save();
+
+        //TODO CoordinatsConfig
 
         System.out.println("Starting up plugin");
 

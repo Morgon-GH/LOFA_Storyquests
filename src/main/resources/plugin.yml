@@ -1,10 +1,10 @@
-name: Lofa-Storyquests
+name: LegendsOfArrol
 version: '${project.version}'
 main: de.morgon.lofa_storyquests.main
 api-version: 1.19
-prefix: [ LOFA Storyquests ]
+prefix: [ Legends of Arrol ]
 authors: [ Morgon, CrAzyA22 ]
-description: This Plugin is for the Storyquests of the "Legends of Arrol"-Server
+description: This Plugin is for the "Legends of Arrol"-Server
 website: https://sites.google.com/view/legends-of-arrol/startseite
 commands:
   start1quest:

@@ -1,8 +1,7 @@
 package de.morgon.lofa_storyquests.commands;
 
-import de.morgon.lofa_storyquests.PlayerProgressConfig;
+import de.morgon.lofa_storyquests.configs.PlayerProgressConfig;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
@@ -23,27 +22,33 @@ public class StartingFirstQuestCommand implements CommandExecutor {
         if(s instanceof Player){
 
             Player p = (Player) s;
-            int x = -3580;
-            int y = 100;
-            int z = -4119;
 
-            p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 30, 1));
-            p.teleport(new Location(p.getWorld(), x, y, z));
+            if(PlayerProgressConfig.get().getInt(p.getName()) != 1) {
 
-            p.sendMessage("§c-----------------------------------------------------");
-            p.sendMessage("§cWillkommen bei den Legenden von Arrol");
-            p.sendMessage("§c-----------------------------------------------------");
-            p.sendMessage("§2Du beginnst deine Geschichte als Einfacher Bauer auf einem Hof im Land Arrol. Du hast nichts, außer dein Feld und deine zwei Pferde vor deiner Kutsche.");
-            p.sendMessage("§2Wie jeden Tag beginnst du auch heute damit, das Feld zu ernten und den Ertrag an die Hafenstadt zu bringen. Doch der Tag wird anders verlaufen, als du es erwartet hast...");
+                int x = -3580;
+                int y = 100;
+                int z = -4119;
 
-            p.playSound(p.getPlayer(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
+                p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 30, 1));
+                p.teleport(new Location(Bukkit.getWorld("world"), x, y, z));
 
-            BossBar bar = Bukkit.createBossBar("§2Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
-            bar.setVisible(true);
-            bar.addPlayer(p);
+                p.sendMessage("§c-----------------------------------------------------");
+                p.sendMessage("§cWillkommen bei den Legenden von Arrol");
+                p.sendMessage("§c-----------------------------------------------------");
+                p.sendMessage("§2Du beginnst deine Geschichte als Einfacher Bauer auf einem Hof im Land Arrol. Du hast nichts, außer dein Feld und deine zwei Pferde vor deiner Kutsche.");
+                p.sendMessage("§2Wie jeden Tag beginnst du auch heute damit, das Feld zu ernten und den Ertrag an die Hafenstadt zu bringen. Doch der Tag wird anders verlaufen, als du es erwartet hast...");
 
-            PlayerProgressConfig.get().addDefault(p.getName(), 1);
-            PlayerProgressConfig.save();
+                p.playSound(p.getPlayer(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
+
+                BossBar bar = Bukkit.createBossBar("§2Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
+                bar.setVisible(true);
+                bar.addPlayer(p);
+
+                PlayerProgressConfig.get().addDefault(p.getName(), 1);
+                PlayerProgressConfig.save();
+            }else{
+
+            }
 
         }else System.out.println("Command must be executed by a player");
 
