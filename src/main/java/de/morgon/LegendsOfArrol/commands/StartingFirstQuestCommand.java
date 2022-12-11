@@ -1,6 +1,6 @@
-package de.morgon.lofa_storyquests.commands;
+package de.morgon.LegendsOfArrol.commands;
 
-import de.morgon.lofa_storyquests.configs.PlayerProgressConfig;
+import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;

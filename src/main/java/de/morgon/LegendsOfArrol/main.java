@@ -1,8 +1,8 @@
-package de.morgon.lofa_storyquests;
+package de.morgon.LegendsOfArrol;
 
-import de.morgon.lofa_storyquests.commands.StartingFirstQuestCommand;
-import de.morgon.lofa_storyquests.configs.PlayerProgressConfig;
-import de.morgon.lofa_storyquests.quests.ADiffrentSide;
+import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
+import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
+import de.morgon.LegendsOfArrol.quests.ADiffrentSide;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
