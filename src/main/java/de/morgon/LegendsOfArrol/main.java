@@ -2,7 +2,8 @@ package de.morgon.LegendsOfArrol;
 
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.quests.ADiffrentSide;
+import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
+import de.morgon.LegendsOfArrol.mainquests.ADiffrentSide;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,7 +27,12 @@ public final class main extends JavaPlugin {
         getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
+
+        //mainquests
         pluginManager.registerEvents(new ADiffrentSide(), this);
+
+        //mechanics
+        pluginManager.registerEvents(new FarmingWheat(),this);
     }
 
     @Override
