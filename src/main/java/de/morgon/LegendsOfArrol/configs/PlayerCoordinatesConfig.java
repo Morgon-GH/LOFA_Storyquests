@@ -1,4 +1,4 @@
-package de.morgon.lofa_storyquests;
+package de.morgon.LegendsOfArrol.configs;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -7,7 +7,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class PlayerProgressConfig {
+public class PlayerCoordinatesConfig {
 
     private static File file;
     private static FileConfiguration customFile;
@@ -15,7 +15,7 @@ public class PlayerProgressConfig {
     //finds or generates the config file
     public static void setup(){
 
-        file = new File(Bukkit.getServer().getPluginManager().getPlugin("Lofa-Storyquests").getDataFolder(), "playerprogress.yml");
+        file = new File(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol").getDataFolder(), "playercoordinates.yml");
 
         if(!file.exists()){
             try{

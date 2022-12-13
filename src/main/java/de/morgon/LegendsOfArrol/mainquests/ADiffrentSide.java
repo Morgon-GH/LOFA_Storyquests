@@ -1,4 +1,4 @@
-package de.morgon.lofa_storyquests.quests;
+package de.morgon.LegendsOfArrol.mainquests;
 
 /*
 This quest immediately starts when the player joins the game
