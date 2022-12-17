@@ -14,9 +14,8 @@ import org.bukkit.event.block.BlockBreakEvent;
 public class ADiffrentSide implements Listener {
 
     @EventHandler
-    public void onSpawn(BlockBreakEvent e){
+    public void onWheatBreak(BlockBreakEvent e){
         Player p = e.getPlayer();
-        if(p.hasPermission("wheatQuest1")){
             if(PlayerProgressConfig.get().getString(p.getName()).equals("1")) {
                 if (e.getBlock().equals(Material.WHEAT)) {
                     p.sendMessage("§4Sehr gut!");
@@ -25,5 +24,3 @@ public class ADiffrentSide implements Listener {
             }
         }
     }
-
-}
