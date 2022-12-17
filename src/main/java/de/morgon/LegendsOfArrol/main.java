@@ -1,6 +1,7 @@
 package de.morgon.LegendsOfArrol;
 
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
+import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
 import de.morgon.LegendsOfArrol.mainquests.ADiffrentSide;
@@ -25,6 +26,7 @@ public final class main extends JavaPlugin {
         System.out.println("Starting up plugin");
 
         getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
+        getCommand("trackProg").setExecutor(new TrackPlayerProgress());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 
