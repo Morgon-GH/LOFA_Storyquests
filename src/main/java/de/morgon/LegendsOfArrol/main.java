@@ -3,9 +3,11 @@ package de.morgon.LegendsOfArrol;
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
+import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
 import de.morgon.LegendsOfArrol.mainquests.ADiffrentSide;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -35,6 +37,7 @@ public final class main extends JavaPlugin {
 
         //mechanics
         pluginManager.registerEvents(new FarmingWheat(),this);
+        pluginManager.registerEvents(new ControlBlockBreak(), this);
     }
 
     @Override

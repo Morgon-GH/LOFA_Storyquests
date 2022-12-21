@@ -3,6 +3,7 @@ package de.morgon.LegendsOfArrol.commands;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
@@ -11,6 +12,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -40,6 +43,14 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
                 p.playSound(p.getPlayer(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
 
+                ItemStack is = new ItemStack(Material.WOODEN_HOE);
+                ItemMeta im = is.getItemMeta();
+
+                im.setUnbreakable(true);
+
+                is.setItemMeta(im);
+                p.getInventory().addItem(is);
+
                 BossBar bar = Bukkit.createBossBar("§2Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
                 bar.setVisible(true);
                 bar.addPlayer(p);
@@ -47,6 +58,8 @@ public class StartingFirstQuestCommand implements CommandExecutor {
                 PlayerProgressConfig.get().addDefault(p.getName(), 1);
                 PlayerProgressConfig.save();
             }else{
+
+                p.sendMessage("Story already startet");
 
             }
 
