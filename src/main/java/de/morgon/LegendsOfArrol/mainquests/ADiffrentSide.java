@@ -10,20 +10,21 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class ADiffrentSide implements Listener {
 
     @EventHandler
     public void onWheatBreak(BlockBreakEvent e){
+
         Player p = e.getPlayer();
-        Material cropBlockType = null;
-            if(PlayerProgressConfig.get().getInt(p.getName()) == 1) {
-                if (e.getBlock().equals(Material.WHEAT))
-                {
-                        p.sendMessage("§4Sehr gut!");
-                        p.sendMessage("§4Sammle insgesammt 10 Weizen und bringe sie zur Hafenstadt. Du findest sie, wenn du dem Weg hinter dem Haus folgst");
+
+        if(PlayerProgressConfig.get().getInt(p.getName()) == 1 && !p.getInventory().contains(Material.WHEAT)) {
+            if (e.getBlock().getType() == Material.WHEAT){
+                p.sendMessage("§4Sehr gut!");
+                p.sendMessage("§4Sammle insgesammt 10 Weizen und bringe sie zur Hafenstadt. Du findest sie, wenn du dem Weg hinter dem Haus folgst");
                 }
-            }
+        }
     }
 }
 
