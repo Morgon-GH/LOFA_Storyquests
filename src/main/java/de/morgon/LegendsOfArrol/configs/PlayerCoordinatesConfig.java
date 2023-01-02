@@ -19,14 +19,10 @@ public class PlayerCoordinatesConfig {
 
         if(!file.exists()){
             try{
-
                 file.createNewFile();
-
             }catch (IOException e){}
         }
-
         customFile = YamlConfiguration.loadConfiguration(file);
-
     }
 
     public static FileConfiguration get(){
@@ -40,9 +36,7 @@ public class PlayerCoordinatesConfig {
             System.out.println("Couldn't save Progress Config");
         }
     }
-
     public static void reload(){
         customFile = YamlConfiguration.loadConfiguration(file);
     }
-
 }

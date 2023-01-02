@@ -2,14 +2,17 @@ package de.morgon.LegendsOfArrol;
 
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
+import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
 import de.morgon.LegendsOfArrol.mainquests.ADiffrentSide;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+//TODO general player options interface
+//TODO player save coordinates
 
 public final class main extends JavaPlugin {
 
@@ -23,7 +26,9 @@ public final class main extends JavaPlugin {
         PlayerProgressConfig.get().options().copyDefaults(true);
         PlayerProgressConfig.save();
 
-        //TODO CoordinatsConfig
+        PlayerCoordinatesConfig.setup();
+        PlayerProgressConfig.get().options().copyDefaults(true);
+        PlayerProgressConfig.save();
 
         System.out.println("Starting up plugin");
 
