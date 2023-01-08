@@ -11,6 +11,8 @@ commands:
     description: Starts the first storyquest and so the game
   trackProg:
     description: Tracks a players story progression
+  savecords:
+    description: test command
 
 permissions:
   LegendsOfArrol.Building:
