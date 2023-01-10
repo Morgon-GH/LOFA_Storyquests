@@ -55,7 +55,7 @@ public class StartingFirstQuestCommand implements CommandExecutor {
                 bar.setVisible(true);
                 bar.addPlayer(p);
 
-                PlayerProgressConfig.get().addDefault(p.getName(), 1);
+                PlayerProgressConfig.get().set(p.getName(), 1);
                 PlayerProgressConfig.save();
             }else{
 

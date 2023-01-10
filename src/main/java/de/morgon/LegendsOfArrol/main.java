@@ -1,6 +1,5 @@
 package de.morgon.LegendsOfArrol;
 
-import de.morgon.LegendsOfArrol.commands.CoordinatsSaveCommand;
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
@@ -29,14 +28,13 @@ public final class main extends JavaPlugin {
         PlayerProgressConfig.save();
 
         PlayerCoordinatesConfig.setup();
-        PlayerProgressConfig.get().options().copyDefaults(true);
-        PlayerProgressConfig.save();
+//        PlayerCoordinatesConfig.get().options().copyDefaults(true);
+        PlayerCoordinatesConfig.save();
 
         System.out.println("Starting up plugin");
 
         getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
         getCommand("trackProg").setExecutor(new TrackPlayerProgress());
-        getCommand("savecords").setExecutor(new CoordinatsSaveCommand());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 

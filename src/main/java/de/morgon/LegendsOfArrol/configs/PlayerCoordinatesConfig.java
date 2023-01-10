@@ -9,34 +9,34 @@ import java.io.IOException;
 
 public class PlayerCoordinatesConfig {
 
-    private static File file2;
-    private static FileConfiguration customFile2;
+    private static File file;
+    private static FileConfiguration customFile;
 
     //finds or generates the config file
     public static void setup(){
 
-        file2 = new File(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol").getDataFolder(), "playercoordinates.yml");
+        file = new File(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol").getDataFolder(), "playercoordinates.yml");
 
-        if(!file2.exists()){
+        if(!file.exists()){
             try{
-                file2.createNewFile();
+                file.createNewFile();
             }catch (IOException e){}
         }
-        customFile2 = YamlConfiguration.loadConfiguration(file2);
+        customFile = YamlConfiguration.loadConfiguration(file);
     }
 
     public static FileConfiguration get(){
-         return customFile2;
+         return customFile;
     }
 
     public static void save(){
         try{
-            customFile2.save(file2);
+            customFile.save(file);
         }catch (IOException e){
             System.out.println("Couldn't save Progress Config");
         }
     }
     public static void reload(){
-        customFile2 = YamlConfiguration.loadConfiguration(file2);
+        customFile = YamlConfiguration.loadConfiguration(file);
     }
 }
