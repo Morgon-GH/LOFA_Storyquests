@@ -12,9 +12,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-//TODO general player options interface
-//TODO player save coordinates
-
 public final class main extends JavaPlugin {
 
     @Override
@@ -24,11 +21,9 @@ public final class main extends JavaPlugin {
         saveDefaultConfig();
 
         PlayerProgressConfig.setup();
-        PlayerProgressConfig.get().options().copyDefaults(true);
         PlayerProgressConfig.save();
 
         PlayerCoordinatesConfig.setup();
-//        PlayerCoordinatesConfig.get().options().copyDefaults(true);
         PlayerCoordinatesConfig.save();
 
         System.out.println("Starting up plugin");

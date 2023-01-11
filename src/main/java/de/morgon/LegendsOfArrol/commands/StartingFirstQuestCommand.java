@@ -1,5 +1,6 @@
 package de.morgon.LegendsOfArrol.commands;
 
+import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -59,7 +60,12 @@ public class StartingFirstQuestCommand implements CommandExecutor {
                 PlayerProgressConfig.save();
             }else{
 
-                p.sendMessage("Story already startet");
+                double x = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".X");
+                double y = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Y");
+                double z = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Z");
+
+                Location loc = new Location(Bukkit.getWorld("world"), x, y, z);
+                p.teleport(loc);
 
             }
 
