@@ -27,7 +27,16 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
             Player p = (Player) s;
 
-            if(PlayerProgressConfig.get().getInt(p.getName()) != 1) {
+            if(PlayerProgressConfig.get().getInt(p.getName()) >= 1){
+
+                double x = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".X");
+                double y = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Y");
+                double z = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Z");
+
+                Location loc = new Location(Bukkit.getWorld("world"), x, y, z);
+                p.teleport(loc);
+
+            }else {
 
                 int x = -3580;
                 int y = 100;
@@ -58,14 +67,6 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
                 PlayerProgressConfig.get().set(p.getName(), 1);
                 PlayerProgressConfig.save();
-            }else{
-
-                double x = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".X");
-                double y = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Y");
-                double z = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Z");
-
-                Location loc = new Location(Bukkit.getWorld("world"), x, y, z);
-                p.teleport(loc);
 
             }
 
