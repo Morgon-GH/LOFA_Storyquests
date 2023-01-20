@@ -29,7 +29,7 @@ public final class main extends JavaPlugin {
         System.out.println("Starting up plugin");
 
         getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
-        getCommand("trackProg").setExecutor(new TrackPlayerProgress());
+        getCommand("QuestProg").setExecutor(new TrackPlayerProgress());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 

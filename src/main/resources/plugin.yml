@@ -9,7 +9,7 @@ website: https://sites.google.com/view/legends-of-arrol/startseite
 commands:
   start1quest:
     description: Starts the first storyquest and so the game
-  trackProg:
+  QuestProg:
     description: Tracks a players story progression
   savecords:
     description: test command

@@ -10,13 +10,22 @@ import org.bukkit.entity.Player;
 public class TrackPlayerProgress implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        if(commandSender instanceof Player) {
+        if (commandSender instanceof Player) {
             Player p = (Player) commandSender;
-            if(args.length == 0) {
-                p.sendMessage("Progress: " + PlayerProgressConfig.get().getString(p.getName()));
-            }else if(args.length == 1) {
-                Player target = Bukkit.getPlayer(args[0]);
-                p.sendMessage("Progress: " + PlayerProgressConfig.get().getString(target.getName()));
+            if (args[0].equals("get")) {
+                if (args.length == 1) {
+                    p.sendMessage("Your Quest Pprogress: " + PlayerProgressConfig.get().getInt(p.getName()));
+                } else if (args.length == 2) {
+                    Player target = Bukkit.getPlayer(args[1]);
+                    p.sendMessage(target.getName() + "'s Quest Progress: " + PlayerProgressConfig.get().getInt(target.getName()));
+                }
+            } else if (args[0].equals("set")) {
+                if (args.length == 3) {
+                    Player target = Bukkit.getPlayer(args[1]);
+                    String QuestProgress = args[2];
+                    p.sendMessage("Set " + target.getName() + "'s Quest Progress to: " + QuestProgress);
+                    PlayerProgressConfig.get().set(target.getName(), QuestProgress);
+                }
             }
         }
         return false;
