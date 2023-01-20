@@ -31,6 +31,7 @@ public class ADiffrentSide implements Listener {
 
         if(PlayerProgressConfig.get().getInt(p.getName()) == 1 && !p.getInventory().contains(Material.WHEAT)) {
             if (e.getBlock().getType() == Material.WHEAT){
+                PlayerProgressConfig.get().set(p.getName(), 2);
                 p.sendMessage("§4Sehr gut!");
                 p.sendMessage("§4Crafte einen Weizenblock und bringe ihn zur Hafenstadt. Du findest sie, wenn du dem Weg hinter dem Haus folgst");
             }
