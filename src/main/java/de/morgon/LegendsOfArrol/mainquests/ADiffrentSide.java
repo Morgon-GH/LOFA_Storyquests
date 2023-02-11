@@ -42,7 +42,7 @@ public class ADiffrentSide implements Listener {
     @EventHandler
     public void onGetHay(CraftItemEvent e) {
 
-        Player p = (Player) e.getWhoClicked();
+        Player p = (Player) e.getViewers();
 
         if (PlayerProgressConfig.get().getDouble(p.getName()) == 1.2) {
 

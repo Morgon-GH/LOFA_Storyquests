@@ -13,6 +13,8 @@ commands:
     description: Tracks a players story progression
   savecords:
     description: test command
+  setprog:
+    description: sets the progress level for a specific player
 
 permissions:
   LegendsOfArrol.Building:
