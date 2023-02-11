@@ -53,10 +53,6 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
                 p.playSound(p.getPlayer(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
 
-                BossBar bar = Bukkit.createBossBar("§2Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
-                bar.setVisible(true);
-                bar.addPlayer(p);
-
                 PlayerProgressConfig.get().set(p.getName(), 1.1);
                 PlayerProgressConfig.save();
 

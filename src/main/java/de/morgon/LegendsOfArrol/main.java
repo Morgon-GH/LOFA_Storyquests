@@ -23,9 +23,11 @@ public final class main extends JavaPlugin {
 
         PlayerProgressConfig.setup();
         PlayerProgressConfig.save();
+        PlayerProgressConfig.get().options().copyDefaults();
 
         PlayerCoordinatesConfig.setup();
         PlayerCoordinatesConfig.save();
+        PlayerCoordinatesConfig.get().options().copyDefaults();
 
         System.out.println("Starting up plugin");
 
