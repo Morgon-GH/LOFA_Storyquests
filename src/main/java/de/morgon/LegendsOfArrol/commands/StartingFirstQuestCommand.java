@@ -27,7 +27,7 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
             Player p = (Player) s;
 
-            if(PlayerProgressConfig.get().getInt(p.getName()) >= 1){
+            if(PlayerProgressConfig.get().getDouble(p.getName()) >= 1){
 
                 double x = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".X");
                 double y = PlayerCoordinatesConfig.get().getDouble(p.getName() + ".Y");
@@ -53,19 +53,11 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
                 p.playSound(p.getPlayer(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
 
-                ItemStack is = new ItemStack(Material.WOODEN_HOE);
-                ItemMeta im = is.getItemMeta();
-
-                im.setUnbreakable(true);
-
-                is.setItemMeta(im);
-                p.getInventory().addItem(is);
-
                 BossBar bar = Bukkit.createBossBar("§2Aufgabe: Ernte Weizen vom Feld", BarColor.GREEN, BarStyle.SOLID);
                 bar.setVisible(true);
                 bar.addPlayer(p);
 
-                PlayerProgressConfig.get().set(p.getName(), 1);
+                PlayerProgressConfig.get().set(p.getName(), 1.1);
                 PlayerProgressConfig.save();
 
             }
