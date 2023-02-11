@@ -10,11 +10,9 @@ commands:
   start1quest:
     description: Starts the first storyquest and so the game
   QuestProg:
-    description: Tracks a players story progression
+    description: Tracks or sets a players story progression
   savecords:
     description: test command
-  setprog:
-    description: sets the progress level for a specific player
 
 permissions:
   LegendsOfArrol.Building:
