@@ -131,7 +131,7 @@ public class ADiffrentSide implements Listener {
 
                     ItemStack w = new ItemStack(Material.WHEAT);
                     ItemMeta wm = w.getItemMeta();
-                    wm.setDisplayName("§everarbeitetes Weizen");
+                    wm.setDisplayName("§eVerarbeitetes Weizen");
                     w.setItemMeta(wm);
                     w.setAmount(5);
 
