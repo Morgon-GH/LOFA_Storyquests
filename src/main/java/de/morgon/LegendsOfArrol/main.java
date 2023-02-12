@@ -1,6 +1,5 @@
 package de.morgon.LegendsOfArrol;
 
-import de.morgon.LegendsOfArrol.commands.SetProgressCommand;
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
@@ -37,7 +36,7 @@ public final class main extends JavaPlugin {
         PluginManager pluginManager= Bukkit.getPluginManager();
 
         //mainquests
-        pluginManager.registerEvents(new ADiffrentSide(), this);
+        getServer().getPluginManager().registerEvents(new ADiffrentSide(this), this);
 
         //mechanics
         pluginManager.registerEvents(new FarmingWheat(),this);

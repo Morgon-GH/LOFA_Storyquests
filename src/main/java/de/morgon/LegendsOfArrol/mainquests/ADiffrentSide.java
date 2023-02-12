@@ -5,6 +5,7 @@ This quest immediately starts when the player joins the game
 */
 
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
+import de.morgon.LegendsOfArrol.main;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -22,9 +23,16 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.spigotmc.event.entity.EntityMountEvent;
 
 public class ADiffrentSide implements Listener {
+
+    main plugin;
+
+    public ADiffrentSide(main plugin) {
+        this.plugin = plugin;
+    }
 
     @EventHandler
     public void onWheatBreak(BlockBreakEvent e) {
@@ -71,6 +79,17 @@ public class ADiffrentSide implements Listener {
             p.setGameMode(GameMode.SPECTATOR);
             p.teleport(house);
             p.sendTitle("§4Die Legenden von Arrol", "");
+
+            new BukkitRunnable(){
+
+                @Override
+                public void run() {
+
+                    Location city = new Location(Bukkit.getWorld("world"), -3111.654, 67, -1740.243, -36, -5);
+                    p.setGameMode(GameMode.SURVIVAL);
+                    p.teleport(city);
+                }
+            }.runTaskLater(plugin, 20 * 4);
 
         }
     }
