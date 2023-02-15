@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class SavePlayerCoordinates implements Listener {
@@ -15,7 +16,7 @@ public class SavePlayerCoordinates implements Listener {
     private void saveLocation(Player player, Location location){
 
         double x = location.getX();
-        double y = location.getY();
+        double y = location.getY() + 1.5;
         double z = location.getZ();
 
         PlayerCoordinatesConfig.get().set(player.getName() + ".X", x);
@@ -39,13 +40,30 @@ public class SavePlayerCoordinates implements Listener {
     }
 
     @EventHandler
+    public void onChangeWorld(PlayerChangedWorldEvent e){
+
+        Player p = e.getPlayer();
+        Location loc = p.getLocation();
+
+        if(p.getLocation().getWorld() == Bukkit.getWorld("world")) {
+
+            saveLocation(p, loc);
+
+        }
+
+    }
+
+    @EventHandler
     public void onSleep(PlayerBedLeaveEvent e){
 
         Player p = e.getPlayer();
         Location loc = e.getBed().getLocation();
 
-        saveLocation(p, loc);
+        if(p.getLocation().getWorld() == Bukkit.getWorld("world")) {
 
+            saveLocation(p, loc);
+
+        }
     }
 
 }
