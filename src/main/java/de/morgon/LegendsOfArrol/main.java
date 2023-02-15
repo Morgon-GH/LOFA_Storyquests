@@ -4,7 +4,7 @@ import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.configs.SavePlayerCoordinates;
+import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
 import de.morgon.LegendsOfArrol.mainquests.ADiffrentSide;
