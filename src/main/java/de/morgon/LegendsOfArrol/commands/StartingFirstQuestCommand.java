@@ -36,6 +36,8 @@ public class StartingFirstQuestCommand implements CommandExecutor {
                 Location loc = new Location(Bukkit.getWorld("world"), x, y, z);
                 p.teleport(loc);
 
+                p.setBedSpawnLocation(loc);
+
             }else {
 
                 int x = -3580;
