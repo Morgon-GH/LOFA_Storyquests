@@ -14,7 +14,7 @@ public class Party implements CommandExecutor {
         if (strings.length == 2) {
             if (strings[0].equals("invite")) {
 
-                Player CalledPlayer = Bukkit.
+                Player CalledPlayer = Bukkit.getPlayer(strings[1]);
 
                 commandSender.sendMessage("invited " + strings[1]);
 
