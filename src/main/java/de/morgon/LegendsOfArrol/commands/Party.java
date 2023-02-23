@@ -15,16 +15,35 @@ public class Party implements CommandExecutor {
             if (strings[0].equals("invite")) {
 
                 Player CalledPlayer = Bukkit.getPlayer(strings[1]);
-
                 commandSender.sendMessage("invited " + strings[1]);
+                CalledPlayer.sendMessage("You have been invited by " + commandSender.getName());
 
             }
             if (strings[0].equals("list")) {
                 commandSender.sendMessage();
             }
+
+            if (strings[0].equals("accept")){
+                Player CalledPlayer = Bukkit.getPlayer(strings[1]);
+
+                commandSender.sendMessage("accepted invite " + CalledPlayer.getName());
+                CalledPlayer.sendMessage(commandSender.getName() + " joined the Party");
+            }
         } else
         {
             commandSender.sendMessage(  "Please use /party help");
+        }
+        if (strings.length == 1) {
+            if (strings[0].equals("help")) {
+
+                commandSender.sendMessage("------------Partyhelp------------");
+                commandSender.sendMessage("/party invite <Playername> <- Invites a Player to Party");
+                commandSender.sendMessage("/party list <- Lists Player in a Party");
+                commandSender.sendMessage("/party accept <Playername> <- Accept a invite from a Player");
+                commandSender.sendMessage("");
+
+
+            }
         }
 
         return false;
