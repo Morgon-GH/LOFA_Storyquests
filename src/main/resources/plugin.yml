@@ -13,6 +13,10 @@ commands:
     description: Tracks or sets a players story progression
   savecords:
     description: test command
+  Party:
+    description:
+  P:
+    description:
 
 permissions:
   LegendsOfArrol.Building:

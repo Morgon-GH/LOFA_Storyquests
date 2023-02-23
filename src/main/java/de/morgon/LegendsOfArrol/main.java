@@ -1,5 +1,7 @@
 package de.morgon.LegendsOfArrol;
 
+import de.morgon.LegendsOfArrol.commands.P;
+import de.morgon.LegendsOfArrol.commands.Party;
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
@@ -32,6 +34,8 @@ public final class main extends JavaPlugin {
 
         getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
         getCommand("QuestProg").setExecutor(new TrackPlayerProgress());
+        getCommand("Party").setExecutor(new Party());
+        getCommand("P").setExecutor(new P());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 
