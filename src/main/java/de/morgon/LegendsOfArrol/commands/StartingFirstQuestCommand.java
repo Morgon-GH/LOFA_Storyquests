@@ -2,6 +2,7 @@ package de.morgon.LegendsOfArrol.commands;
 
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
+import de.morgon.LegendsOfArrol.errors.Message;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -19,6 +20,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class StartingFirstQuestCommand implements CommandExecutor {
+    Message message = new Message();
 
     @Override
     public boolean onCommand(CommandSender s, Command c, String label, String[] args) {
@@ -60,7 +62,7 @@ public class StartingFirstQuestCommand implements CommandExecutor {
 
             }
 
-        }else System.out.println("Command must be executed by a player");
+        }else message.needsPlayerMessage(s);
 
         return false;
     }

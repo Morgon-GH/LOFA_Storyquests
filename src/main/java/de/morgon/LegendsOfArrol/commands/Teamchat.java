@@ -18,9 +18,6 @@ public class Teamchat implements CommandExecutor {
         if(strings.length == 0) {
             if (commandSender.hasPermission("LegendsOfArrol.teamchat")) {
 
-                Player Teamlistener = TeammitgliederConfig.get().getDouble(.getName())
-                Teamlistener.sendMessage(commandSender.getName() + strings[0]);
-
             }else {
                 commandSender.sendMessage("Sorry you have no Permissions");
             }

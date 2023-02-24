@@ -21,6 +21,8 @@ commands:
     description:
   Tc:
     description:
+  Lobby:
+    description: Teleports the executer to the lobby
 
 permissions:
   LegendsOfArrol.Building:
