@@ -73,7 +73,6 @@ public class Party implements CommandExecutor {
         {
             commandSender.sendMessage(  "Please use /party help <page>");
         }
-
         return false;
     }
 
