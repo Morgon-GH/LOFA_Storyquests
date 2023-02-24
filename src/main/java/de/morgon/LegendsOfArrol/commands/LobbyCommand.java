@@ -7,8 +7,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Locale;
-
 public class LobbyCommand implements CommandExecutor {
     Message message = new Message();
     @Override
@@ -17,9 +15,7 @@ public class LobbyCommand implements CommandExecutor {
         Teleport teleport = new Teleport();
 
         if(commandSender instanceof Player){
-
             teleport.teleportToLobby((Player) commandSender);
-
         }else message.needsPlayerMessage(commandSender);
         return true;
     }

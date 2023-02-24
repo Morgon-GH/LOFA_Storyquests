@@ -3,7 +3,6 @@ package de.morgon.LegendsOfArrol;
 import de.morgon.LegendsOfArrol.commands.*;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.configs.TeammitgliederConfig;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
@@ -12,7 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.MissingFormatArgumentException;
+import java.util.Objects;
 
 public final class main extends JavaPlugin {
 
@@ -30,21 +29,15 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.save();
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
-        TeammitgliederConfig.setup();
-        TeammitgliederConfig.save();
-        TeammitgliederConfig.get().options().copyDefaults();
-
 
         System.out.println("Starting up plugin");
 
         //commands
-        getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
-        getCommand("QuestProg").setExecutor(new TrackPlayerProgress());
-        getCommand("Party").setExecutor(new Party());
-        getCommand("P").setExecutor(new Party());
-        getCommand("Teamchat").setExecutor(new Teamchat());
-        getCommand("Tc").setExecutor(new Teamchat());
-        getCommand("lobby").setExecutor(new LobbyCommand());
+        Objects.requireNonNull(getCommand("start1quest")).setExecutor(new StartingFirstQuestCommand());
+        Objects.requireNonNull(getCommand("QuestProg")).setExecutor(new TrackPlayerProgress());
+        Objects.requireNonNull(getCommand("Party")).setExecutor(new Party());
+        Objects.requireNonNull(getCommand("P")).setExecutor(new Party());
+        Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 

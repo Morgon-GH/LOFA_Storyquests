@@ -12,7 +12,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Horse;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,15 +19,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
-import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerItemHeldEvent;
-import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.spigotmc.event.entity.EntityMountEvent;
+
+import java.util.Objects;
 
 public class ADiffrentSide implements Listener {
 
@@ -82,7 +79,7 @@ public class ADiffrentSide implements Listener {
             PlayerProgressConfig.save();
             p.setGameMode(GameMode.SPECTATOR);
             p.teleport(house);
-            p.sendTitle("§4Die Legenden von Arrol", "");
+            p.sendTitle("§4Die Legenden von Arrol", "", 5, 60, 5);
 
             new BukkitRunnable(){
 
@@ -108,7 +105,7 @@ public class ADiffrentSide implements Listener {
         Player p = e.getPlayer();
         Block b = e.getClickedBlock();
 
-        if(PlayerProgressConfig.get().getDouble(p.getName()) == 1.4 && e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && p.getInventory().contains(Material.HAY_BLOCK) && b.getType().equals(Material.LODESTONE)) {
+        if(PlayerProgressConfig.get().getDouble(p.getName()) == 1.4 && e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && p.getInventory().contains(Material.HAY_BLOCK) && Objects.requireNonNull(b).getType().equals(Material.LODESTONE)) {
 
             PlayerProgressConfig.get().set(p.getName(), 1.5);
             PlayerProgressConfig.save();
@@ -131,7 +128,7 @@ public class ADiffrentSide implements Listener {
 
                     ItemStack w = new ItemStack(Material.WHEAT);
                     ItemMeta wm = w.getItemMeta();
-                    wm.setDisplayName("§eVerarbeitetes Weizen");
+                    Objects.requireNonNull(wm).setDisplayName("§eVerarbeitetes Weizen");
                     w.setItemMeta(wm);
                     w.setAmount(5);
 
