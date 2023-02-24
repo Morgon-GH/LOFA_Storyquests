@@ -17,7 +17,13 @@ commands:
     description:
   P:
     description:
+  Teamchat:
+    description:
+  Tc:
+    description:
 
 permissions:
   LegendsOfArrol.Building:
+    default: false
+  LegendsOfArrol.teamchat:
     default: false
