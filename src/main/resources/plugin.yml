@@ -17,9 +17,13 @@ commands:
     description:
   P:
     description:
-  Teamchat:
+  Vanish:
     description:
-  Tc:
+  V:
+    description:
+  cch:
+    description:
+  Clearchat:
     description:
   Lobby:
     description: Teleports the executer to the lobby
@@ -28,4 +32,8 @@ permissions:
   LegendsOfArrol.Building:
     default: false
   LegendsOfArrol.teamchat:
+    default: false
+  LegendsOfArrol.vanish:
+    default: false
+  LegendsOfArrol.Modchat:
     default: false
