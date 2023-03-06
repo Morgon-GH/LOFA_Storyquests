@@ -29,7 +29,6 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.save();
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
-
         System.out.println("Starting up plugin");
 
         //commands
