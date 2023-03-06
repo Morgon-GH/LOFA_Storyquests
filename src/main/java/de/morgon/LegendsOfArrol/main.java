@@ -48,7 +48,6 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new FarmingWheat(),this);
         pluginManager.registerEvents(new ControlBlockBreak(), this);
         pluginManager.registerEvents(new SavePlayerCoordinates(), this);
-
     }
     @Override
     public void onDisable() {
