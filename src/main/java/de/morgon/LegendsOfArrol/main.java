@@ -1,6 +1,5 @@
 package de.morgon.LegendsOfArrol;
 
-import de.morgon.LegendsOfArrol.commands.P;
 import de.morgon.LegendsOfArrol.commands.Party;
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
