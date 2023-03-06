@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class PlayerProgressConfig {
 
@@ -15,14 +16,14 @@ public class PlayerProgressConfig {
     //finds or generates the config file
     public static void setup(){
 
-        file = new File(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol").getDataFolder(), "playerprogress.yml");
+        file = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol")).getDataFolder(), "playerprogress.yml");
 
         if(!file.exists()){
             try{
 
                 file.createNewFile();
 
-            }catch (IOException e){}
+            }catch (IOException ignored){}
         }
 
         customFile = YamlConfiguration.loadConfiguration(file);
@@ -40,9 +41,4 @@ public class PlayerProgressConfig {
             System.out.println("Couldn't save Progress Config");
         }
     }
-
-    public static void reload(){
-        customFile = YamlConfiguration.loadConfiguration(file);
-    }
-
 }

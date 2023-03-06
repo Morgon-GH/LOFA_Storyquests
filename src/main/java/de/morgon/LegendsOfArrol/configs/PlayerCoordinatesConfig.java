@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class PlayerCoordinatesConfig {
 
@@ -15,12 +16,12 @@ public class PlayerCoordinatesConfig {
     //finds or generates the config file
     public static void setup(){
 
-        file = new File(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol").getDataFolder(), "playercoordinates.yml");
+        file = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("LegendsOfArrol")).getDataFolder(), "playercoordinates.yml");
 
         if(!file.exists()){
             try{
                 file.createNewFile();
-            }catch (IOException e){}
+            }catch(IOException ignored){}
         }
         customFile = YamlConfiguration.loadConfiguration(file);
     }
@@ -35,8 +36,5 @@ public class PlayerCoordinatesConfig {
         }catch (IOException e){
             System.out.println("Couldn't save Progress Config");
         }
-    }
-    public static void reload(){
-        customFile = YamlConfiguration.loadConfiguration(file);
     }
 }
