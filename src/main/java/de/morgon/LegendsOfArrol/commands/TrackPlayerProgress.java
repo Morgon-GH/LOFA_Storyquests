@@ -18,15 +18,15 @@ public class TrackPlayerProgress implements CommandExecutor {
                 if (args.length == 1) {
                     p.sendMessage("Your Quest Pprogress: " + PlayerProgressConfig.get().getDouble(p.getName()));
                 } else if (args.length == 2) {
-                    Player target = Bukkit.getPlayer(args[1]);
-                    p.sendMessage(Objects.requireNonNull(target).getName() + "'s Quest Progress: " + PlayerProgressConfig.get().getDouble(target.getName()));
+                    String target = args[1];
+                    p.sendMessage(target + "'s Quest Progress: " + PlayerProgressConfig.get().getDouble(target));
                 }
             } else if (args[0].equals("set")) {
                 if (args.length == 3) {
-                    Player target = Bukkit.getPlayer(args[1]);
+                    String target = args[1];
                     Double QuestProgress = Double.valueOf(args[2]);
-                    p.sendMessage("Set " + Objects.requireNonNull(target).getName() + "'s Quest Progress to: " + QuestProgress);
-                    PlayerProgressConfig.get().set(target.getName(), QuestProgress);
+                    p.sendMessage("Set " + target + "'s Quest Progress to: " + QuestProgress);
+                    PlayerProgressConfig.get().set(target, QuestProgress);
                 }
             }
         }

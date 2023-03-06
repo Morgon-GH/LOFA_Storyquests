@@ -3,14 +3,18 @@ package de.morgon.LegendsOfArrol.methods;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
+
+import java.util.Objects;
 
 public class Teleport {
 
-    public void teleportToLobby(Player player){
+    public void teleportToLobby(Player p){
 
         Location lobby = new Location(Bukkit.getWorld("lobby"), 131.5, 53.00, -615.5, 90, 0);
-        player.teleport(lobby);
+        p.teleport(lobby);
+        p.playSound(Objects.requireNonNull(p), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 1);
 
     }
 

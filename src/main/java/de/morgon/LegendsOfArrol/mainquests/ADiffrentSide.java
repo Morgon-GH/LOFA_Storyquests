@@ -1,7 +1,7 @@
 package de.morgon.LegendsOfArrol.mainquests;
 
 /*
-This quest immediately starts when the player joins the game
+This quest ist started by the StartingFirstQuestCommand
 */
 
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
