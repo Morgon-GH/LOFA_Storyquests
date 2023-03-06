@@ -37,7 +37,6 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("Party")).setExecutor(new Party());
         Objects.requireNonNull(getCommand("P")).setExecutor(new Party());
 
-
         PluginManager pluginManager= Bukkit.getPluginManager();
 
         //mainquests
