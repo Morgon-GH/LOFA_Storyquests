@@ -31,6 +31,7 @@ public final class main extends JavaPlugin {
 
         System.out.println("Starting up plugin");
 
+        //commands
         Objects.requireNonNull(getCommand("start1quest")).setExecutor(new StartingFirstQuestCommand());
         Objects.requireNonNull(getCommand("QuestProg")).setExecutor(new TrackPlayerProgress());
         Objects.requireNonNull(getCommand("Party")).setExecutor(new Party());
