@@ -1,8 +1,6 @@
 package de.morgon.LegendsOfArrol;
 
-import de.morgon.LegendsOfArrol.commands.Party;
-import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
-import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
+import de.morgon.LegendsOfArrol.commands.*;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
