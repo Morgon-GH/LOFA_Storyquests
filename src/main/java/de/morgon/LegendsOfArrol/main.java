@@ -36,6 +36,11 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("QuestProg")).setExecutor(new TrackPlayerProgress());
         Objects.requireNonNull(getCommand("Party")).setExecutor(new Party());
         Objects.requireNonNull(getCommand("P")).setExecutor(new Party());
+        Objects.requireNonNull(getCommand("V")).setExecutor(new VanishCommand());
+        Objects.requireNonNull(getCommand("Vanish")).setExecutor(new VanishCommand());
+        Objects.requireNonNull(getCommand("cch")).setExecutor(new Clearchat());
+        Objects.requireNonNull(getCommand("Clearchat")).setExecutor(new Clearchat());
+        Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 
