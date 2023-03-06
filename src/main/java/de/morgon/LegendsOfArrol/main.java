@@ -11,6 +11,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class main extends JavaPlugin {
 
     @Override
@@ -29,10 +31,10 @@ public final class main extends JavaPlugin {
 
         System.out.println("Starting up plugin");
 
-        getCommand("start1quest").setExecutor(new StartingFirstQuestCommand());
-        getCommand("QuestProg").setExecutor(new TrackPlayerProgress());
-        getCommand("Party").setExecutor(new Party());
-        getCommand("P").setExecutor(new Party());
+        Objects.requireNonNull(getCommand("start1quest")).setExecutor(new StartingFirstQuestCommand());
+        Objects.requireNonNull(getCommand("QuestProg")).setExecutor(new TrackPlayerProgress());
+        Objects.requireNonNull(getCommand("Party")).setExecutor(new Party());
+        Objects.requireNonNull(getCommand("P")).setExecutor(new Party());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 
