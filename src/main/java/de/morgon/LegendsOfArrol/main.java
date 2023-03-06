@@ -1,13 +1,10 @@
 package de.morgon.LegendsOfArrol;
 
-import de.morgon.LegendsOfArrol.commands.P;
 import de.morgon.LegendsOfArrol.commands.Party;
 import de.morgon.LegendsOfArrol.commands.StartingFirstQuestCommand;
-import de.morgon.LegendsOfArrol.commands.Teamchat;
 import de.morgon.LegendsOfArrol.commands.TrackPlayerProgress;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.configs.TeammitgliederConfig;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
@@ -36,10 +33,6 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.save();
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
-        TeammitgliederConfig.setup();
-        TeammitgliederConfig.save();
-        TeammitgliederConfig.get().options().copyDefaults();
-
 
         System.out.println("Starting up plugin");
 
@@ -47,8 +40,6 @@ public final class main extends JavaPlugin {
         getCommand("QuestProg").setExecutor(new TrackPlayerProgress());
         getCommand("Party").setExecutor(new Party());
         getCommand("P").setExecutor(new Party());
-        getCommand("Teamchat").setExecutor(new Teamchat());
-        getCommand("Tc").setExecutor(new Teamchat());
 
         PluginManager pluginManager= Bukkit.getPluginManager();
 
