@@ -17,6 +17,9 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        System.out.println("Starting up plugin...");
+
+        System.out.println("Loading configs...");
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -29,9 +32,11 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.save();
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
-        System.out.println("Starting up plugin");
+        System.out.println("Configs loaded up successfully");
 
         //commands
+        System.out.println("Loading commands...");
+
         Objects.requireNonNull(getCommand("start1quest")).setExecutor(new StartingFirstQuestCommand());
         Objects.requireNonNull(getCommand("QuestProg")).setExecutor(new TrackPlayerProgress());
         Objects.requireNonNull(getCommand("Party")).setExecutor(new Party());
@@ -42,7 +47,13 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("Clearchat")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
 
+        System.out.println("Commands loaded successfully");
+
         PluginManager pluginManager= Bukkit.getPluginManager();
+
+        //Events
+
+        System.out.println("Registering events...");
 
         //mainquests
         getServer().getPluginManager().registerEvents(new ADiffrentSide(this), this);
@@ -51,6 +62,10 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new FarmingWheat(),this);
         pluginManager.registerEvents(new ControlBlockBreak(), this);
         pluginManager.registerEvents(new SavePlayerCoordinates(), this);
+
+        System.out.println("Events registered successfully");
+
+        System.out.println("Plugin started successfully");
     }
 
     @Override
