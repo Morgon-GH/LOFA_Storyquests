@@ -15,7 +15,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.Objects;
 
-public class StartingFirstQuestCommand implements CommandExecutor {
+public class StartCommand implements CommandExecutor {
     Message message = new Message();
     Teleport teleport = new Teleport();
 

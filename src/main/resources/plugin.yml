@@ -7,8 +7,8 @@ authors: [ Morgon, CrAzyA22 ]
 description: This Plugin is for the "Legends of Arrol"-Server
 website: https://sites.google.com/view/legends-of-arrol/startseite
 commands:
-  start1quest:
-    description: Starts the first storyquest and so the game
+  start:
+    description: Starts the first storyquest or brings ypu to your logout position
   QuestProg:
     description: Tracks or sets a players story progression
   savecords:
