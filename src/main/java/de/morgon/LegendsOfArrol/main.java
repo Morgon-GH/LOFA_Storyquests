@@ -48,6 +48,7 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("Clearchat")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
         Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
+        Objects.requireNonNull(getCommand("wand")).setExecutor(new wand());
 
         System.out.println("Commands loaded successfully");
 
