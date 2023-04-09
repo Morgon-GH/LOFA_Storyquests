@@ -27,9 +27,9 @@ commands:
     description:
   Lobby:
     description: Teleports the executer to the lobby
-  LGive:
+  lgive:
     description: Acess to all the items
-    permission: LegendsOfArrol.vanish:
+    permission: LegendsOfArrol.vanish
 
 permissions:
   LegendsOfArrol.Building:
