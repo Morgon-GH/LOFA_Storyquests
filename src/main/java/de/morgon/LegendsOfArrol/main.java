@@ -3,6 +3,7 @@ package de.morgon.LegendsOfArrol;
 import de.morgon.LegendsOfArrol.commands.*;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
+import de.morgon.LegendsOfArrol.items.swords;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
@@ -46,6 +47,8 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("cch")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("Clearchat")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
+        Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
+        Objects.requireNonNull(getCommand("wand")).setExecutor(new wand());
 
         System.out.println("Commands loaded successfully");
 
