@@ -136,8 +136,6 @@ public class ADiffrentSide implements Listener {
 
                     p.sendMessage("§aBringe nun das Weizen auf das Schiff und lass es");
                     p.sendMessage("§ains Kerngebirge verschiffen...");
-                    p.sendMessage("");
-                    p.sendMessage("§rVielleicht wirst du eines Tages auch dort sein...");
                 }
             }.runTaskLater(plugin, 20 * 20);
 
