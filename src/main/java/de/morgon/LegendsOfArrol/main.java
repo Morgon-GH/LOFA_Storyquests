@@ -52,7 +52,7 @@ public final class main extends JavaPlugin {
 
         System.out.println("Commands loaded successfully");
 
-        PluginManager pluginManager= Bukkit.getPluginManager();
+        PluginManager pluginManager = Bukkit.getPluginManager();
 
         //Events
 
