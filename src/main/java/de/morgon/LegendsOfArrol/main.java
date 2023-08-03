@@ -3,7 +3,7 @@ package de.morgon.LegendsOfArrol;
 import de.morgon.LegendsOfArrol.commands.*;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.items.swords;
+//import de.morgon.LegendsOfArrol.items.swords;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
@@ -13,14 +13,18 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        System.out.println("Starting up plugin...");
 
-        System.out.println("Loading configs...");
+        Logger logger = Bukkit.getLogger();
+
+        logger.info("Starting up plugin...");
+
+        logger.info("Loading configs...");
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -33,10 +37,10 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.save();
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
-        System.out.println("Configs loaded up successfully");
+        logger.info("Configs loaded up successfully");
 
         //commands
-        System.out.println("Loading commands...");
+        logger.info("Loading commands...");
 
         Objects.requireNonNull(getCommand("start")).setExecutor(new StartCommand());
         Objects.requireNonNull(getCommand("QuestProg")).setExecutor(new TrackPlayerProgress());
@@ -47,16 +51,16 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("cch")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("Clearchat")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
-        Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
+//        Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
         Objects.requireNonNull(getCommand("wand")).setExecutor(new wand());
 
-        System.out.println("Commands loaded successfully");
+        logger.info("Commands loaded successfully");
 
         PluginManager pluginManager = Bukkit.getPluginManager();
 
         //Events
 
-        System.out.println("Registering events...");
+        logger.info("Registering events...");
 
         //mainquests
         getServer().getPluginManager().registerEvents(new ADiffrentSide(this), this);
@@ -66,9 +70,9 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new ControlBlockBreak(), this);
         pluginManager.registerEvents(new SavePlayerCoordinates(), this);
 
-        System.out.println("Events registered successfully");
+        logger.info("Events registered successfully");
 
-        System.out.println("Plugin started successfully");
+        logger.info("Plugin started successfully");
     }
 
     @Override
