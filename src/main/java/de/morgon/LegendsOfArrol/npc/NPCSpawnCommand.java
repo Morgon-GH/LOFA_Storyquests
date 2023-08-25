@@ -40,10 +40,14 @@ public class NPCSpawnCommand implements CommandExecutor {
             GameProfile gameProfile = new GameProfile(UUID.randomUUID(), strings[0]);
 
             //https://sessionserver.mojang.com/session/minecraft/profile/UUID?unsigned=false
-            String signature = strings[1];
-            String texture = strings[2];
+//            String signature = strings[1];
+//            String texture = strings[2];
 
-            gameProfile.getProperties().put("textures", new Property("textures", texture, signature));
+            ServerPlayer skinGiver = ((CraftPlayer) Bukkit.getPlayer(strings[1])).getHandle();
+            Collection<Property> skinProperty = skinGiver.getGameProfile().getProperties().get("textures");
+            Property skin = skinProperty.stream().findFirst().get();
+
+            gameProfile.getProperties().put("textures", skin);
 
             ServerPlayer npc = new ServerPlayer(server, level, gameProfile);
             npc.setPos(((CraftPlayer) commandSender).getLocation().getBlockX(), ((CraftPlayer) commandSender).getLocation().getBlockY(), ((CraftPlayer) commandSender).getLocation().getBlockZ());
