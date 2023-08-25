@@ -1,5 +1,6 @@
 package de.morgon.LegendsOfArrol.mechanics;
 
+import de.morgon.LegendsOfArrol.ScoreBoard.ScoreBoard;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -39,6 +40,8 @@ public class SavePlayerCoordinates implements Listener {
 
         Teleport teleport = new Teleport();
         teleport.teleportToLobby(p);
+
+        e.getPlayer().setScoreboard(ScoreBoard.getBaseScoreboard(e.getPlayer()));
 
     }
 
