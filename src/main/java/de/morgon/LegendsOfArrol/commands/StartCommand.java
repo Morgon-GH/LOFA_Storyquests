@@ -1,7 +1,7 @@
 package de.morgon.LegendsOfArrol.commands;
 
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.errors.Message;
+import de.morgon.LegendsOfArrol.Message;
 import de.morgon.LegendsOfArrol.methods.Teleport;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

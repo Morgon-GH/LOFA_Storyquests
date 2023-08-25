@@ -3,11 +3,13 @@ package de.morgon.LegendsOfArrol;
 import de.morgon.LegendsOfArrol.commands.*;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
-import de.morgon.LegendsOfArrol.items.swords;
+//import de.morgon.LegendsOfArrol.items.swords;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
 import de.morgon.LegendsOfArrol.mechanics.ControlBlockBreak;
 import de.morgon.LegendsOfArrol.mechanics.FarmingWheat;
 import de.morgon.LegendsOfArrol.mainquests.ADiffrentSide;
+import de.morgon.LegendsOfArrol.npc.NPCSpawnCommand;
+import de.morgon.LegendsOfArrol.npc.test;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -47,8 +49,10 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("cch")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("Clearchat")).setExecutor(new Clearchat());
         Objects.requireNonNull(getCommand("lobby")).setExecutor(new LobbyCommand());
-        Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
+        //Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
         Objects.requireNonNull(getCommand("wand")).setExecutor(new wand());
+        Objects.requireNonNull(getCommand("npc")).setExecutor(new NPCSpawnCommand());
+        Objects.requireNonNull(getCommand("test")).setExecutor(new test());
 
         System.out.println("Commands loaded successfully");
 

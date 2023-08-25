@@ -32,6 +32,10 @@ commands:
     permission: LegendsOfArrol.vanish
   wand:
     description: A wand
+  npc:
+    description: sboan an enbisi
+  test:
+    description: test
 
 permissions:
   LegendsOfArrol.Building:

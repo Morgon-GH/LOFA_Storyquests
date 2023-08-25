@@ -1,6 +1,6 @@
 package de.morgon.LegendsOfArrol.commands;
 
-import de.morgon.LegendsOfArrol.errors.Message;
+import de.morgon.LegendsOfArrol.Message;
 import de.morgon.LegendsOfArrol.methods.Teleport;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -1,7 +1,11 @@
 package de.morgon.LegendsOfArrol.items;
 
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class unstackables implements Listener{
 
@@ -39,4 +43,16 @@ public class unstackables implements Listener{
 
     //armor
 
+    public static void init() {
+        //weapons
+        createDaedalusAxe();
+    }
+
+    //weapons
+    private static void createDaedalusAxe() {
+        ItemStack item = new ItemStack(Material.GOLDEN_AXE, 1);
+        ItemMeta meta = item.getItemMeta();
+        item.setItemMeta(meta);
+        daedalus_axe = item;
+    }
 }
