@@ -1,6 +1,8 @@
 package de.morgon.LegendsOfArrol;
 
+import de.morgon.LegendsOfArrol.Logs.Log;
 import de.morgon.LegendsOfArrol.commands.*;
+import de.morgon.LegendsOfArrol.configs.LogConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import de.morgon.LegendsOfArrol.mechanics.SavePlayerCoordinates;
@@ -26,8 +28,6 @@ public final class main extends JavaPlugin {
 
         logger.info("Loading configs...");
 
-        getConfig().options().copyDefaults();
-        saveDefaultConfig();
 
         PlayerProgressConfig.setup();
         PlayerProgressConfig.save();
@@ -36,6 +36,10 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.setup();
         PlayerCoordinatesConfig.save();
         PlayerCoordinatesConfig.get().options().copyDefaults();
+
+        LogConfig.setup();
+        LogConfig.save();
+        LogConfig.get().options().copyDefaults();
 
         logger.info("Configs loaded up successfully");
 
@@ -69,6 +73,7 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new FarmingWheat(),this);
         pluginManager.registerEvents(new ControlBlockBreak(), this);
         pluginManager.registerEvents(new SavePlayerCoordinates(), this);
+        pluginManager.registerEvents(new Log(), this);
 
         logger.info("Events registered successfully");
 
