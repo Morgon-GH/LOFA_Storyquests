@@ -24,6 +24,8 @@ public class Party implements CommandExecutor {
                     CalledPlayer.sendMessage("You have been invited by " + commandSender.getName());
 
                     if (!Partylist.contains(CalledPlayer.getName())) {
+
+
                     } else {
                         commandSender.sendMessage("Sorry Player is already in your party");
                     }
@@ -53,6 +55,10 @@ public class Party implements CommandExecutor {
                 commandSender.sendMessage("You Left the Party from " + CalledPlayer.getName());
                 Partylist.remove(commandSender.getName());
                 CalledPlayer.sendMessage(commandSender.getName() + " left the Party");
+            }
+
+            if (strings[0].equals("list")) {
+                commandSender.sendMessage("this has´t been implemented yet");
             }
 
             if (strings[0].equals("help")) {

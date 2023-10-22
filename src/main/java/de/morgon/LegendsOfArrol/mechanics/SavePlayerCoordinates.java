@@ -1,6 +1,6 @@
 package de.morgon.LegendsOfArrol.mechanics;
 
-import de.morgon.LegendsOfArrol.ScoreBoard.ScoreBoard;
+import de.morgon.LegendsOfArrol.GUI.ScoreBoard;
 import de.morgon.LegendsOfArrol.configs.PlayerCoordinatesConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

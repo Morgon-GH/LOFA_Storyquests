@@ -58,6 +58,7 @@ public final class main extends JavaPlugin {
 //        Objects.requireNonNull(getCommand("lgive")).setExecutor(new swords());
         Objects.requireNonNull(getCommand("wand")).setExecutor(new wand());
         Objects.requireNonNull(getCommand("npc")).setExecutor(new NPCSpawnCommand());
+        Objects.requireNonNull(getCommand("lastsave")).setExecutor(new lastsave());
 
         logger.info("Commands loaded successfully");
 

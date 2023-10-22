@@ -36,6 +36,9 @@ commands:
     description: sboan an enbisi
   test:
     description: test
+  lastsave:
+    description: h
+
 
 permissions:
   LegendsOfArrol.Building:

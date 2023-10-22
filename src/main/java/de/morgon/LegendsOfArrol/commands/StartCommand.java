@@ -1,5 +1,6 @@
 package de.morgon.LegendsOfArrol.commands;
 
+import de.morgon.LegendsOfArrol.GUI.ScoreBoard;
 import de.morgon.LegendsOfArrol.configs.PlayerProgressConfig;
 import de.morgon.LegendsOfArrol.Message;
 import de.morgon.LegendsOfArrol.methods.Teleport;
@@ -56,7 +57,10 @@ public class StartCommand implements CommandExecutor {
 
             }
 
+            p.getPlayer().setScoreboard(ScoreBoard.getBaseScoreboard(p.getPlayer()));
+
         }else message.needsPlayerMessage(s);
+
 
         return false;
     }
