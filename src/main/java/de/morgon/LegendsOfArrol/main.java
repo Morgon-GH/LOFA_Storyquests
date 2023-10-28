@@ -78,6 +78,11 @@ public final class main extends JavaPlugin {
 
         logger.info("Events registered successfully");
 
+        Bukkit.getServer().setMaxPlayers(100000);
+
+
+        logger.info("Setting max players");
+
         logger.info("Plugin started successfully");
     }
 
