@@ -45,7 +45,7 @@ public class Log implements Listener {
         LogConfig.save();
 
         e.getQuitMessage();
-        e.setQuitMessage("§e[§4-§e]§r");
+        e.setQuitMessage("§e[§4-§e]§r" + p.getName() + " " );
     }
     @EventHandler
     public void BlockBreak (BlockBreakEvent e) {

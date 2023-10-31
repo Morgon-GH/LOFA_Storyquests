@@ -22,6 +22,8 @@ public final class main extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        int Pcount = this.getConfig().getInt("Playercount");
+
         Logger logger = Bukkit.getLogger();
 
         logger.info("Starting up plugin...");
@@ -38,7 +40,7 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
         LogConfig.setup();
-        LogConfig.save();
+        LogConfig.slave();
         LogConfig.get().options().copyDefaults();
 
         logger.info("Configs loaded up successfully");
@@ -78,8 +80,7 @@ public final class main extends JavaPlugin {
 
         logger.info("Events registered successfully");
 
-        Bukkit.getServer().setMaxPlayers(100000);
-
+        Bukkit.getServer().setMaxPlayers(Pcount);
 
         logger.info("Setting max players");
 
