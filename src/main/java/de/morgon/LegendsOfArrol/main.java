@@ -40,7 +40,7 @@ public final class main extends JavaPlugin {
         PlayerCoordinatesConfig.get().options().copyDefaults();
 
         LogConfig.setup();
-        LogConfig.slave();
+        LogConfig.save();
         LogConfig.get().options().copyDefaults();
 
         logger.info("Configs loaded up successfully");
